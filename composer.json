@@ -9,7 +9,7 @@
 		"otp",
 		"2fa"
 	],
-	"homepage": "https://github.com/pgampe/authenticator",
+	"homepage": "https://gitlab.com/pgampe/authenticator",
 	"authors": [
 		{
 			"name": "Philipp Gampe",
@@ -21,13 +21,13 @@
 		}
 	],
 	"license": [
-		"GPL-2.0+"
+		"GPL-2.0"
 	],
 	"support": {
 		"issues": "https://github.com/pgampe/authenticator/issues"
 	},
 	"require": {
-		"php": ">=5.5",
+		"php": ">=7.0",
 		"typo3/cms-core": "^8.4 || ^9.0"
 	},
 	"autoload": {
