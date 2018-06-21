@@ -1,5 +1,5 @@
 {
-	"name": "authenticator/authenticator",
+	"name": "pgampe/authenticator",
 	"type": "typo3-cms-extension",
 	"description": "Authenticator",
 	"keywords": [
