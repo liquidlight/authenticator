@@ -24,7 +24,7 @@
 		"GPL-2.0"
 	],
 	"support": {
-		"issues": "https://github.com/pgampe/authenticator/issues"
+		"issues": "https://gitlab.com/pgampe/authenticator/issues"
 	},
 	"require": {
 		"php": ">=7.0",
