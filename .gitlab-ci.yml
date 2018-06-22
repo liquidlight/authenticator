@@ -24,8 +24,6 @@ stages:
     - php -r "copy('https://getcomposer.org/composer.phar', 'composer.phar');"
     - php composer.phar config minimum-stability ${COMPOSER_STABILITY}
 #    - php composer.phar remove typo3/cms-core
-    - rm composer.lock
-    - rm -Rf .Build/vendor/
     - php composer.phar require ${TYPO3_VERSION} --update-with-dependencies
     - php composer.phar require --dev nimut/testing-framework:${NIMUT_TESTFRAMEWORK_VERSION} --update-with-dependencies
     - php composer.phar require --dev squizlabs/php_codesniffer
