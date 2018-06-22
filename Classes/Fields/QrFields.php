@@ -19,6 +19,7 @@ use Tx\Authenticator\Auth\TokenAuthenticator;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
 
 /**
@@ -38,9 +39,7 @@ class QrFields
     {
         /** @var PageRenderer $pageRenderer */
         $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
-        $pageRenderer->addJsFile(
-            ExtensionManagementUtility::extRelPath('authenticator').'/Resources/Public/JavaScript/qrcode.js'
-        );
+        $pageRenderer->addJsFile('EXT:authenticator/Resources/Public/JavaScript/qrcode.js');
 
         return $this->createImageAndText($GLOBALS['BE_USER']);
     }

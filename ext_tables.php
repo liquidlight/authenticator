@@ -21,7 +21,7 @@ if (!defined('TYPO3_MODE')) {
 $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_authenticator_secret'] = [
     'label'    => 'LLL:EXT:authenticator/Resources/Private/Language/locallang_db.xlf:be_users.tx_authenticator_secret_user',
     'type'     => 'user',
-    'userFunc' => 'EXT:authenticator/Classes/Fields/QrFields.php:Tx\Authenticator\Fields\QrFields->getBackendSetting',
+    'userFunc' => 'Tx\Authenticator\Fields\QrFields->getBackendSetting',
 ];
 
 $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_authenticator_enabled'] = [
