@@ -23,8 +23,7 @@ stages:
     - apk add git --update
     - php -r "copy('https://getcomposer.org/composer.phar', 'composer.phar');"
     - php composer.phar config minimum-stability ${COMPOSER_STABILITY}
-    - php composer.phar remove --dev nimut/testing-framework
-    - php composer.phar remove typo3/cms-core
+#    - php composer.phar remove typo3/cms-core
     - rm composer.lock
     - rm -Rf .Build/vendor/
     - php composer.phar require ${TYPO3_VERSION} --update-with-dependencies
@@ -34,23 +33,6 @@ stages:
 #    - .Build/bin/phpunit -c Configuration/.Build/Tests/UnitTests.xml
     - .Build/bin/phpcs --standard=PSR2 --extensions=php *
 
-# Build in PHP 7.0 and TYPO3 7.6
-test:php70:typo3_7:
-  <<: *testing
-  variables:
-    DOCKER_TAG: 7.0-alpine
-    TYPO3_VERSION: typo3/cms:^7.6
-    NIMUT_TESTFRAMEWORK_VERSION: ^2
-    COMPOSER_STABILITY: stable
-
-# Build in PHP 7.1 and TYPO3 7.6
-test:php71:typo3_7:
-  <<: *testing
-  variables:
-    DOCKER_TAG: 7.1-alpine
-    TYPO3_VERSION: typo3/cms:^7.6
-    NIMUT_TESTFRAMEWORK_VERSION: ^2
-    COMPOSER_STABILITY: stable
 
 # Build in PHP 7.0 and TYPO3 8 (latest stable release)
 test:php70:typo3_8:
