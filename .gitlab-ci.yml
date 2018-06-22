@@ -2,6 +2,7 @@ cache:
   key: "$CI_COMMIT_REF_NAME-$CI_JOB_STAGE"
   paths:
     - cache/
+    - .Build/vendor
 
 before_script:
   - apk add git --update
@@ -22,6 +23,7 @@ stages:
   before_script:
     - apk add git --update
     - php -r "copy('https://getcomposer.org/composer.phar', 'composer.phar');"
+    - php composer.phar config cache-files-dir /cache/composer
     - php composer.phar config minimum-stability ${COMPOSER_STABILITY}
     - php composer.phar require ${TYPO3_VERSION} --update-with-dependencies
 #    - php composer.phar require --dev nimut/testing-framework:${NIMUT_TESTFRAMEWORK_VERSION} --update-with-dependencies
