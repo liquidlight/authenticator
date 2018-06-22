@@ -19,7 +19,7 @@ stages:
   variables:
     TYPO3_PATH_WEB: "$PWD/.Build/Web"
     TYPO3_PATH_ROOT: "$PWD/.Build/Web"
-    COMPOSER_CACHE_DIR: "/cache/composer"
+    COMPOSER_CACHE_DIR: "cache/composer"
   before_script:
     - apk add git --update
     - php -r "copy('https://getcomposer.org/composer.phar', 'composer.phar');"
