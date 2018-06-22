@@ -15,7 +15,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title'            => 'Authenticator',
-    'description'      => 'Implements a two factor authentication for TYPO3. Currently a for backend only.',
+    'description'      => 'Implements a two factor authentication for TYPO3 via TOTP. Currently a for backend only.',
     'category'         => 'services',
     'author'           => 'Philipp Gampe',
     'author_email'     => 'philipp.gampe@typo3.org',
@@ -27,7 +27,7 @@ $EM_CONF[$_EXTKEY] = [
     'version'          => '1.0.0',
     'constraints'      => [
         'depends' => [
-            'typo3' => '8.4.0-9.9.99',
+            'typo3' => '8.7.0-9.9.99',
         ],
         'conflicts' => [],
         'suggests'  => [],
