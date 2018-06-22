@@ -28,7 +28,7 @@ stages:
     - php composer.phar require --dev squizlabs/php_codesniffer
   script:
 #    - .Build/bin/phpunit -c Configuration/.Build/Tests/UnitTests.xml
-    - .Build/bin/phpcs --standard=PSR2 --extensions=php *
+    - .Build/bin/phpcs --standard=PSR2 --ignore="Resources/Private/Php/*,public/*,.Build/*" --exclude="Generic.Files.LineLength" --extensions=php *
 
 
 # Build in PHP 7.0 and TYPO3 8 (latest stable release)
