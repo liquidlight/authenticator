@@ -30,6 +30,10 @@
 		"php": ">=7.0",
 		"typo3/cms-core": "^8.4 || ^9.0"
 	},
+	"config": {
+        "vendor-dir": ".Build/vendor/",
+        "bin-dir": ".Build/bin/"
+    },
 	"autoload": {
 		"psr-4": {
 			"Tx\\Authenticator\\": "Classes/"
