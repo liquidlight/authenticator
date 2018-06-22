@@ -23,9 +23,8 @@ stages:
     - apk add git --update
     - php -r "copy('https://getcomposer.org/composer.phar', 'composer.phar');"
     - php composer.phar config minimum-stability ${COMPOSER_STABILITY}
-#    - php composer.phar remove typo3/cms-core
     - php composer.phar require ${TYPO3_VERSION} --update-with-dependencies
-    - php composer.phar require --dev nimut/testing-framework:${NIMUT_TESTFRAMEWORK_VERSION} --update-with-dependencies
+#    - php composer.phar require --dev nimut/testing-framework:${NIMUT_TESTFRAMEWORK_VERSION} --update-with-dependencies
     - php composer.phar require --dev squizlabs/php_codesniffer
   script:
 #    - .Build/bin/phpunit -c Configuration/.Build/Tests/UnitTests.xml
