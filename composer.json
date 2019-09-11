@@ -33,7 +33,7 @@
 	},
 	"require": {
 		"php": ">=7.0",
-		"typo3/cms-core": "^8.7 || ^9.0"
+		"typo3/cms-core": "^8.7 || ^9.5"
 	},
 	"config": {
         "vendor-dir": ".Build/vendor/",
