@@ -1,5 +1,5 @@
 {
-	"name": "pgampe/authenticator",
+	"name": "pfaffenrodt/authenticator",
 	"type": "typo3-cms-extension",
 	"description": "Authenticator",
 	"keywords": [
@@ -18,6 +18,10 @@
 		},
 		{
 			"name": "Oliver Eglseder",
+			"role": "Developer"
+		},
+		{
+			"name": "Dimitri Pfaffenrodt",
 			"role": "Developer"
 		}
 	],
