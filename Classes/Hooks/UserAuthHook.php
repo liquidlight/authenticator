@@ -4,6 +4,7 @@ namespace Tx\Authenticator\Hooks;
 use Tx\Authenticator\Auth\TokenAuthenticator;
 use TYPO3\CMS\Backend\Template\DocumentTemplate;
 use TYPO3\CMS\Core\Authentication\AbstractUserAuthentication;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
@@ -89,7 +90,7 @@ class UserAuthHook
 
         $documentTemplate = $this->getDocumentTemplate();
 
-        $backendExtConf = unserialize($this->getExtConf('backend'));
+        $backendExtConf = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('backend');
 
         if (!empty($backendExtConf['loginBackgroundImage'])) {
             $backgroundImage = $this->getUriForFileName($backendExtConf['loginBackgroundImage']);
