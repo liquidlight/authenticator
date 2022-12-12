@@ -1,4 +1,5 @@
 <?php
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 /**
  * This file is part of the TYPO3 CMS project.
  *
@@ -35,5 +36,5 @@ $tempColumnsFrontend = [
     ],
 ];
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('fe_users', $tempColumnsFrontend);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('fe_users', 'tx_authenticator_enabled');
+ExtensionManagementUtility::addTCAcolumns('fe_users', $tempColumnsFrontend);
+ExtensionManagementUtility::addToAllTCAtypes('fe_users', 'tx_authenticator_enabled');

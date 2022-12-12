@@ -1,6 +1,7 @@
 <?php
 namespace Tx\Authenticator\Hooks;
 
+use TYPO3\CMS\Core\Localization\LanguageService;
 use Tx\Authenticator\Auth\TokenAuthenticator;
 use TYPO3\CMS\Backend\Template\DocumentTemplate;
 use TYPO3\CMS\Core\Authentication\AbstractUserAuthentication;
@@ -8,7 +9,6 @@ use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
-use TYPO3\CMS\Lang\LanguageService;
 
 /**
  * Straddles into the normal backend user authentication process to display the 2-factor form.
@@ -221,7 +221,7 @@ class UserAuthHook
      */
     protected function getExtConf($extKey)
     {
-        return $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$extKey];
+        return GeneralUtility::makeInstance(ExtensionConfiguration::class)->get($extKey);
     }
 
     /**
