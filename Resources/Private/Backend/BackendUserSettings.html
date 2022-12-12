@@ -1,5 +1,17 @@
-<p><a href="{authUrl}">{tokenKey}</a></p>
-<div id="qrcode"></div>
+<div id="qrcode" class="form-section-headline"></div>
 <script type="text/javascript">
 	new QRCode(document.getElementById("qrcode"), "{authUrl}");
 </script>
+
+<div class="row">
+	<div class="form-group col-md-12">
+		<label>Token:</label>
+		<input id="auth_code" type="text" value="{tokenKey}" class="form-control" readonly maxlength="80">
+	</div>
+</div>
+<div class="row">
+	<div class="form-group col-md-12">
+		<label>Auth URL:</label>
+		<input id="auth_url" type="text" value="{authUrl}" class="form-control" readonly maxlength="80">
+	</div>
+</div>
