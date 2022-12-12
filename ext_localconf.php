@@ -14,7 +14,7 @@
  */
 
 if (!defined('TYPO3_MODE')) {
-    die('Access denied.');
+	die('Access denied.');
 }
 
 // Register hook for user auth, use post user lookup as next possible hook AFTER user authentication

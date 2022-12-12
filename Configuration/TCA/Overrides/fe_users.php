@@ -1,5 +1,7 @@
 <?php
+
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 /**
  * This file is part of the TYPO3 CMS project.
  *
@@ -14,26 +16,26 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
  */
 
 $tempColumnsFrontend = [
-    'tx_authenticator_secret' => [
-        'exclude' => 0,
-        'label' => 'LLL:EXT:authenticator/Resources/Private/Language/locallang_db.xlf:fe_users.tx_authenticator_secret',
-        'config' => [
-            'type' => 'passthrough',
-        ],
-    ],
-    'tx_authenticator_enabled' => [
-        'label' => 'LLL:EXT:authenticator/Resources/Private/Language/locallang_db.xlf:fe_users.tx_authenticator_eaddTCAcolumnsnabled',
-        'config' => [
-            'type' => 'check',
-            'items' => [
-                [
-                    'LLL:EXT:authenticator/Resources/Private/Language/locallang_db.xlf:fe_users.tx_authenticator_enabled_item',
-                    0,
-                ],
-            ],
-            'default' => 0,
-        ],
-    ],
+	'tx_authenticator_secret' => [
+		'exclude' => 0,
+		'label' => 'LLL:EXT:authenticator/Resources/Private/Language/locallang_db.xlf:fe_users.tx_authenticator_secret',
+		'config' => [
+			'type' => 'passthrough',
+		],
+	],
+	'tx_authenticator_enabled' => [
+		'label' => 'LLL:EXT:authenticator/Resources/Private/Language/locallang_db.xlf:fe_users.tx_authenticator_eaddTCAcolumnsnabled',
+		'config' => [
+			'type' => 'check',
+			'items' => [
+				[
+					'LLL:EXT:authenticator/Resources/Private/Language/locallang_db.xlf:fe_users.tx_authenticator_enabled_item',
+					0,
+				],
+			],
+			'default' => 0,
+		],
+	],
 ];
 
 ExtensionManagementUtility::addTCAcolumns('fe_users', $tempColumnsFrontend);
