@@ -117,11 +117,11 @@ class UserAuthHook
 			$backgroundImage = $this->getUriForFileName($backendExtConf['loginBackgroundImage']);
 			$css = /** @lang CSS */
 				'@media (min-width: 768px){
-            .typo3-login-carousel-control.right,
-            .typo3-login-carousel-control.left,
-            .panel-login { border: 0; }
-            .typo3-login { background-image: url("' . $backgroundImage . '"); }
-            }';
+			.typo3-login-carousel-control.right,
+			.typo3-login-carousel-control.left,
+			.panel-login { border: 0; }
+			.typo3-login { background-image: url("' . $backgroundImage . '"); }
+			}';
 			$documentTemplate->inDocStylesArray[] = $css;
 		}
 
@@ -141,11 +141,11 @@ class UserAuthHook
 		if (!empty($highlightColor)) {
 			$documentTemplate->inDocStylesArray[] = /** @lang CSS */
 				'.btn-login.tx_authenticator_login_button,
-            .btn-login.tx_authenticator_login_button:hover,
-            .btn-login.tx_authenticator_login_button:active,
-            .btn-login.tx_authenticator_login_button:active:hover,
-            .btn-login.tx_authenticator_login_button:focus { background-color: ' . $highlightColor . '; }
-            .panel-login .panel-body.tx_authenticator_login_wrap { border-color: ' . $highlightColor . '; }';
+			.btn-login.tx_authenticator_login_button:hover,
+			.btn-login.tx_authenticator_login_button:active,
+			.btn-login.tx_authenticator_login_button:active:hover,
+			.btn-login.tx_authenticator_login_button:focus { background-color: ' . $highlightColor . '; }
+			.panel-login .panel-body.tx_authenticator_login_wrap { border-color: ' . $highlightColor . '; }';
 		}
 
 		$content = $documentTemplate->startPage('TYPO3 CMS Login: ' . $this->getSiteName());
