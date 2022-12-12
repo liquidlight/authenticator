@@ -12,7 +12,7 @@ Setup
 Install the extension via composer
 
 ```
-composer req liquidlight/authenticator
+composer req liquidlight/typo3-authenticator
 ```
 
 How to use it
