@@ -1,5 +1,5 @@
 {
-	"name": "pfaffenrodt/authenticator",
+	"name": "liquidlight/authenticator",
 	"type": "typo3-cms-extension",
 	"description": "Authenticator",
 	"keywords": [
@@ -10,7 +10,7 @@
 		"2fa",
 		"TOTP"
 	],
-	"homepage": "https://gitlab.com/pgampe/authenticator",
+	"homepage": "https://gitlab.com/liquid-light-dev/authenticator",
 	"authors": [
 		{
 			"name": "Philipp Gampe",
@@ -23,13 +23,17 @@
 		{
 			"name": "Dimitri Pfaffenrodt",
 			"role": "Developer"
+		},
+		{
+			"name": "Mike Street",
+			"role": "Developer"
 		}
 	],
 	"license": [
 		"GPL-2.0"
 	],
 	"support": {
-		"issues": "https://gitlab.com/pgampe/authenticator/issues"
+		"issues": "https://gitlab.com/liquid-light-dev/authenticator/issues"
 	},
 	"require": {
 		"php": ">=7.0",
