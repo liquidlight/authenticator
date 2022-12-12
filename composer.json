@@ -58,12 +58,10 @@
 		"typo3-ter/authenticator": "self.version"
 	},
 	"extra": {
-		"branch-alias": {
-			"dev-master": "1.0.x-dev"
-		},
         "typo3/cms": {
             "cms-package-dir": "{$vendor-dir}/typo3/cms",
-            "web-dir": ".Build/web"
+            "web-dir": ".Build/web",
+			"extension-key": "authenticator"
         }
 	}
 }
