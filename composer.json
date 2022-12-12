@@ -1,5 +1,5 @@
 {
-	"name": "liquidlight/authenticator",
+	"name": "liquidlight/typo3-authenticator",
 	"type": "typo3-cms-extension",
 	"description": "Authenticator",
 	"keywords": [
