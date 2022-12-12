@@ -53,7 +53,8 @@
 		]
 	},
 	"replace": {
-		"authenticator": "self.version",
+		"pfaffenrodt/authenticator": "self.version",
+		"pgampe/authenticator": "self.version",
 		"typo3-ter/authenticator": "self.version"
 	},
 	"extra": {
