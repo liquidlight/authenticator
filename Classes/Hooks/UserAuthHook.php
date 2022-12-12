@@ -10,6 +10,7 @@ use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
+use TYPO3\CMS\Backend\Routing\UriBuilder;
 
 /**
  * Straddles into the normal backend user authentication process to display the 2-factor form.
@@ -33,6 +34,10 @@ class UserAuthHook
 	{
 		$this->user = $user;
 
+		if ($this->isLoggingOut()) {
+			return;
+		}
+
 		if ($this->canAuthenticate() && $this->needsAuthentication()) {
 			$authenticator = GeneralUtility::makeInstance(TokenAuthenticator::class, $this->user);
 			$postTokenCheck = $authenticator->verify(
@@ -45,6 +50,21 @@ class UserAuthHook
 				$this->showForm(GeneralUtility::_GP('oneTimeSecret'));
 			}
 		}
+	}
+
+	/**
+	 * Check to see if the route is logging out
+	 *
+	 * @return boolean TRUE if the current user is trying to logout
+	 */
+	protected function isLoggingOut()
+	{
+		$request = $GLOBALS['TYPO3_REQUEST'];
+
+		return $request
+			&& $request->getQueryParams()
+			&& isset($request->getQueryParams()['route'])
+			&& $request->getQueryParams()['route'] === '/logout';
 	}
 
 	/**
@@ -170,13 +190,17 @@ class UserAuthHook
 	 */
 	protected function renderLoginForm($token, $logo)
 	{
+		$uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
 		$view = GeneralUtility::makeInstance(StandaloneView::class);
+
 		$view->setLayoutRootPaths(['EXT:authenticator/Resources/Private/Layouts']);
 		$view->setTemplateRootPaths(['EXT:authenticator/Resources/Private/Templates']);
 		$view->setTemplate('LoginToken');
 		$view->assign('token', $token);
 		$view->assign('hasLoginError', !empty($token));
 		$view->assign('logo', $logo);
+		$view->assign('logoutUrl', (string)$uriBuilder->buildUriFromRoute('logout', ['redirectTo' => '/typo3/index.php']));
+
 		return $view->render();
 	}
 
